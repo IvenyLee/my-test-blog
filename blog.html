@@ -17,14 +17,65 @@
 
         <main>
             <h2>blog</h2>
-            <u1>
-                <li><a href="#">20250729,第一个网页！</a></li>
-                <li><a href="#">一张我喜欢的照片，作为这个网站的开始~</a></li>
-            </u1>
+            <ul id="post-list"></ul>
+            <hr>
+            <div id="post-content"></div>
         </main>
+
+        <script>
+            function loadPost(file) {
+                fetch('posts/' + file)
+                .then(response => response.text())
+                .then(text => {
+                    // 插入图片（静态或动态）
+                    text = text.replace(/\[image:(.*?) caption:(.*?)\]/g,
+                        '<figure><img src="images/$1" style="max-width:100%"><figcaption>$2</figcaption></figure>'
+                    );
+
+                    // 插入本地视频
+                    text = text.replace(/\[video:(.*?) caption:(.*?)\]/g,
+                        '<figure><video controls style="max-width:100%"><source src="videos/$1" type="video/mp4"></video><figcaption>$2</figcaption></figure>'
+                    );
+
+                    // 插入 YouTube 视频
+                    text = text.replace(/\[youtube:(.*?) caption:(.*?)\]/g,
+                        '<figure><iframe width="100%" height="315" src="$1" frameborder="0" allowfullscreen></iframe><figcaption>$2</figcaption></figure>'
+                    );
+
+                    // 一级标题
+                    text = text.replace(/^# (.*?)$/gm, '<h2>$1</h2>');
+                    // 普通换行
+                    text = text.replace(/\n/g, '<br>');
+
+                    document.getElementById("post-content").innerHTML = text;
+                })
+            }
+
+            function loadPostList() {
+                fetch('posts/index.json')
+                .then(response => response.json())
+                .then(posts => {
+                    const ul = document.getElementById('post-list');
+                    posts.forEach(post => {
+                        const li = document.createElement("li");
+                        const a = document.createElement("a");
+                        a.href = "#";
+                        a.textContent = post.title;
+                        a.onclick = () => loadPost(post.file);
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    });
+                });
+            }
+
+            // 页面加载后自动执行
+            window.onload = loadPostList
+        </script>
+
 
         <footer>
             <p>&copy; Limorgen</p>
         </footer>
     </body>
 </html>
+
