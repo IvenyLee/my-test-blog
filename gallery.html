@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="zh">
-    <head>
-        <meta charset="UTF-8">
-        <title>Gallery</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <h1 style="text-align:center">相册集</h1>
+    <div id="album-list" class="album-list"></div>
+
+    <div id="thumbnail-list" class="thumbnail-list" style="display:none;"></div>
+
+    <!-- Modal 容器 -->
+    <div id="img-modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
         
-        <div id="header-container"></div>
+        <!-- 图片 Modal -->
+        <img class="modal-content" id="modal-img" style="display:none">
+        
+        <!-- 视频 Modal -->
+        <video class="modal-content" id="modal-video" controls style="display:none"></video>
+        
+        <div id="modal-caption"></div>
+    </div>
 
-        <!-- gallery content-->
-         <div class="gallery-content">
-                <!-- image area-->
-         </div>
 
-        <script src="loadHeader.js"></script>
-    </body>
+    <script src="loadHeader.js"></script>
+    <script src="gallery.js"></script>
+</body>
 </html>
