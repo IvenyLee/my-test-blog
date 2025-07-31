@@ -79,3 +79,40 @@ footer {
     color: #333;
 }
 
+nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #d2691e; /* optional */
+}
+
+.tags {
+    margin: 1em 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 5px;
+    font-size: 0.85em;
+    color: #555;
+}
+
+blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background-color: #f9f9f9;
+    font-style: italic;
+    color: #333;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+}

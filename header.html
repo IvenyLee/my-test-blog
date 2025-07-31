@@ -1,9 +1,23 @@
 <header>
-    <h1>Limorgen's Blog</h1>
+    <h1>桂子境</h1>
     <nav>
-        <a href="index.html">HOME</a>
-        <a href="blog.html">BLOG</a>
-        <a href="gallery.html">GALLERY</a>
-        <a href="about.html">ABOUT ME</a>
+        <a href="index.html">主页</a>
+        <a href="blog.html">文章</a>
+        <a href="gallery.html">图库</a>
+        <a href="about.html">关于我</a>
     </nav>
 </header>
+
+<script>
+    // 待添加交互功能
+    // 高亮导航项
+    document.addEventListener("DOMContentLoaded", () => {
+        const currentPage = location.pathname.split("/").pop() || "index.html";
+        const links = document.querySelectorAll("header nav a");
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
