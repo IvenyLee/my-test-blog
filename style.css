@@ -1,187 +1,380 @@
+/* === 通用基础样式 === */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 header {
-    background-color: #222;
-    color: white;
-    padding: 1em;
-    text-align: center;
-}
-
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-nav a:hover {
-    color: white;
-}
-
-nav a.active {
-    font-weight: bold;
-    text-decoration: underline;
-    color: #d2691e;
+  background-color: #222;
+  color: white;
+  padding: 1em;
+  text-align: center;
 }
 
 main {
-    padding: 2em;
+  padding: 2em;
 }
 
 footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #eee;
+  text-align: center;
+  padding: 1em;
+  background-color: #eee;
 }
 
+iframe {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === 导航链接样式 === */
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #d2691e;
+}
+
+/* === 布局结构 === */
 .container {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px;
 }
 
 .main-content {
-    flex: 3;
+  flex: 3;
 }
 
 .sidebar {
-    flex: 1;
-    background-color: #f5f5f5;
-    padding: 15px;
-    border-left: 1px solid #ccc;
-    border-radius: 5px;
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-left: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .sidebar ul {
-    padding-left: 20px;
-    list-style: disc;
+  padding-left: 20px;
+  list-style: disc;
 }
 
 .sidebar li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
+/* === 通用按钮样式 === */
+.btn {
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #666;
+}
+
+/* === 标签与引用块 === */
 blockquote {
-    border-left: 4px solid #ccc;
-    margin: 1em 0;
-    padding: 0.5em 1em;
-    background-color: #f9f9f9;
-    font-style: italic;
-    color: #333;
+  border-left: 4px solid #ccc;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background-color: #f9f9f9;
+  font-style: italic;
 }
 
 .tags {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 .tag {
-    display: inline-block;
-    background-color: #eee;
-    border-radius: 4px;
-    padding: 2px 8px;
-    margin-right: 5px;
-    font-size: 0.85em;
-    color: #555;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-right: 5px;
+  font-size: 0.85em;
+  color: #555;
 }
 
-/* 相册按钮区域 */
+/* === 相册模块 === */
 #album-list button {
-    margin: 5px;
-    padding: 10px 15px;
-    font-size: 1em;
-    cursor: pointer;
+  margin: 5px;
 }
 
-/* 缩略图区域 */
 #thumbnail-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
 }
 
 .thumb-item {
-    width: 200px;
-    text-align: center;
+  width: 200px;
+  text-align: center;
 }
 
 .thumb-item img,
 .thumb-item video {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
 
 .thumb-item img:hover,
 .thumb-item video:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .thumb-item p {
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #555;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #555;
 }
 
-/* Modal 弹出层 */
+/* === Modal 弹窗 === */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    text-align: center;
-    padding-top: 60px;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  padding-top: 60px;
 }
 
-.modal-content {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-}
-
-/* 让图片居中并最大化显示 */
-.modal img {
-    display: block;
-    margin: 0 auto;
-    max-width: 90%;
-    max-height: 80vh;
-}
-
-/* 让视频也居中并最大化显示 */
+.modal-content,
+.modal img,
 .modal video {
-    display: block;
-    margin: 0 auto;
-    max-width: 90%;
-    max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  object-fit: contain;
+  background-color: black;
 }
-
 
 #modal-caption {
-    margin-top: 15px;
-    color: #eee;
-    font-size: 1rem;
+  margin-top: 15px;
+  color: #eee;
+  font-size: 1rem;
 }
 
 .close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  z-index: 10000;
+  transform: translateY(-50%);
+}
+
+.nav-arrow.left {
+  left: 20px;
+}
+
+.nav-arrow.right {
+  right: 20px;
+}
+
+/* === 外链视频样式 === */
+.external-video-wrapper {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  margin: 1em;
+}
+
+.video-placeholder {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.play-button {
+  position: absolute;
+  font-size: 48px;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#video-list {
+  list-style: none;
+  padding: 0;
+}
+
+#video-list li {
+  margin: 8px 0;
+}
+
+#video-list a {
+  text-decoration: none;
+  color: #3366cc;
+}
+
+#video-list a:hover {
+  text-decoration: underline;
+}
+
+/* === 游戏页面样式 === */
+#game-list {
+  margin: 20px;
+}
+
+#game-list button {
+  margin: 20px;
+}
+
+#game-frame-container {
+  margin-top: 30px;
+}
+
+.back-button {
+  margin-top: 40px;
+}
+
+.game-frame-fixed {
+  width: 100%;
+  max-width: 800px;
+  height: 480px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.game-frame-fixed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 游戏 Modal */
+/* Modal 外层：占满整个页面 */
+#game-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+/* Modal 内容容器：移除固定宽度限制 */
+#game-modal .modal-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-top: 60px; /* 给顶部留出关闭按钮空间 */
+  box-sizing: border-box;
+}
+
+/* iframe 尽可能填满视口，自动适应宽高 */
+/* 游戏容器 */
+#game-container {
+  position: relative;
+  display: inline-block;
+  transform-origin: top left;
+  background: black;
+  overflow: hidden;
+}
+
+/* iframe 原始大小（由 JS 设置） */
+#game-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* 关闭按钮样式 */
+#game-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* 游戏标题 */
+#game-modal-title {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: white;
+  font-size: 20px;
+  z-index: 10000;
+}
+
+/* === 外链视频播放器容器样式 === */
+#player-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 比例 */
+  background-color: black;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 720px;
+}
+
+/* video 和 iframe 都会完整铺满容器 */
+#player-container video,
+#player-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

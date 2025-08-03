@@ -1,0 +1,12 @@
+[
+  {
+    "name": "2048",
+    "src": "assets/game/2048/index.html"
+  },
+
+  {
+    "name": "Dungeon Mercenary",
+    "src": "https://smelc3.itch.io/dungeon-mercenary",
+    "external": "true"
+  }
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog - Limorgen's Blog</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <!-- 给header留位置 -->
+        <div id="header-container"></div>
+
+        <main class="container">
+            <!-- 左侧文章内容 -->
+            <div class="main-content">
+                <!-- 文章列表 -->
+                <section id="blog-list">
+                    <h1>文章</h1>
+                    <ul id="post-list"></ul>
+                </section>
+
+                <!-- 单篇文章 -->
+                <section id="blog-post" style="display: none;">
+                    <button onclick="backToList()">← 返回文章列表</button>
+                    <div id="post-content"></div>
+                </section>
+            </div>
+
+            <!-- 右侧标签栏 -->
+            <aside class="sidebar">
+                <h3>标签 TAGS</h3>
+                <ul id="tag-list"></ul>
+            </aside>
+        </main>
+
+
+        <!-- 插入统一的header.html -->
+        <script src="/assets/js/loadHeader.js"></script>
+
+        <!-- 插入blogLoader.js -->
+         <script src="/assets/js/blogLoader.js"></script>
+         <script>
+            window.onload = loadPostList;
+         </script>
+
+
+        <footer>
+            <p>&copy; Limorgen</p>
+        </footer>
+    </body>
+</html>

@@ -11,5 +11,26 @@
         "title": "海滩灯光下的飞虫",
         "tags": ["绝区零", "海滩", "视频"],
         "type": "video"
+    },
+
+    {
+        "file": "20250731dinner.jpg",
+        "title": "七月份最后的晚餐",
+        "tags": ["饮食"],
+        "type": "image"
+    },
+
+    {
+        "file": "NightSightOfMBZ.jpg",
+        "title": "MBZ夜景",
+        "tags": ["夜景", "德累斯顿"],
+        "type": "image"
+    },
+
+    {
+        "file": "20250712_DA.jpg",
+        "title": "论文打印之时",
+        "tags": ["德累斯顿", "日常"],
+        "type": "image"
     }
 ]
