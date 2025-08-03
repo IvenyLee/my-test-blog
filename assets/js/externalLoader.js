@@ -1,4 +1,4 @@
-fetch("embedVideos/index.json")
+fetch("./embedVideos/index.json")
   .then(res => res.json())
   .then(videos => {
     const player = document.getElementById("video-player");
@@ -24,7 +24,7 @@ fetch("embedVideos/index.json")
             window.open(video.url, "_blank");
             return;
         }
-        
+
         // 切换显示
         player.src = video.url;
         player.style.display = "block";

@@ -1,5 +1,5 @@
 function loadPostList() {
-    fetch('posts/index.json')
+    fetch('./posts/index.json')
         .then(response => response.json())
         .then(posts => {
             // 按标题排序
@@ -84,7 +84,7 @@ function renderTagList(tagCount, allPosts) {
 }
 
 function filterPostsByTag(selectedTag) {
-    fetch('posts/index.json')
+    fetch('./posts/index.json')
         .then(response => response.json())
         .then(posts => {
             const ul = document.getElementById('post-list');

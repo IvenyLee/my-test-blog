@@ -60,7 +60,7 @@ function closeGameModal() {
 }
 
 function fetchGames() {
-  fetch("assets/game/games.json")
+  fetch("./assets/game/games.json")
     .then(response => response.json())
     .then(data => {
       games = data;

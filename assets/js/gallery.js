@@ -3,7 +3,7 @@ const imageBasePath = "images/";
 let currentIndex = 0;
 let currentTagList = [];
 
-fetch("images/index.json")
+fetch("./images/index.json")
     .then(res => res.json())
     .then(data => {
         imageData = data;
