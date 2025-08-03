@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Butter - Limorgen's Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <script src="./assets/js/loadHeader.js"></script>
+
+  <!-- 标题 + 返回外链首页按钮 -->
+    <h1 style="text-align: center;">
+    <span id="external-title">Butter</span>
+    <button id="back-to-index" onclick="goBack()" style="display: none; margin-left: 10px;">← 返回</button>
+    </h1>
+
+    <div class="container">
+    <!-- 左侧主内容 -->
+    <div class="main-content">
+        <!-- 播放器区域：16:9长方形 -->
+          <div id="player-container">
+          <video id="default-video" autoplay loop muted playsinline
+                  controls controlslist="nodownload nofullscreen noremoteplayback"
+                  disablePictureInPicture>
+              <source src="./images/flowerWindow_compressed.mp4" type="video/mp4">
+              您的浏览器不支持 HTML5 视频。
+          </video>
+
+          <iframe id="video-player" frameborder="0" allowfullscreen style="display: none;"></iframe>
+          </div>
+
+        <div style="margin-top: 10px;">
+        <button class="btn" onclick="window.location.href='external.html'">← 返回外链</button>
+        </div>
+    </div>
+
+    <!-- 右侧播放列表 -->
+    <aside class="sidebar">
+        <h3>播放列表</h3>
+        <ul id="video-list"></ul>
+        
+        <h3>标签筛选</h3>
+        <div id="tag-list"></div>
+    </aside>
+    </div>
+
+
+  <script src="./assets/js/butterLoader.js"></script>
+</body>
+</html>
