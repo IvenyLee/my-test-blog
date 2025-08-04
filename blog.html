@@ -21,7 +21,7 @@
 
                 <!-- 单篇文章 -->
                 <section id="blog-post" style="display: none;">
-                    <button onclick="backToList()">← 返回文章列表</button>
+                    <button class="btn" onclick="backToList()">← 返回文章列表</button>
                     <div id="post-content"></div>
                 </section>
             </div>
@@ -35,10 +35,10 @@
 
 
         <!-- 插入统一的header.html -->
-        <script src="loadHeader.js"></script>
+        <script src="./assets/js/loadHeader.js"></script>
 
         <!-- 插入blogLoader.js -->
-         <script src="blogLoader.js"></script>
+         <script src="./assets/js/blogLoader.js"></script>
          <script>
             window.onload = loadPostList;
          </script>

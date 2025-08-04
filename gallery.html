@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>Gallery</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Gallery - Limorgen's Blog</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="header-container"></div>
+  <div id="header-container"></div>
+  <script src="./assets/js/loadHeader.js"></script>
 
-    <h1 style="text-align:center">相册集</h1>
-    <div id="album-list" class="album-list"></div>
+  <h1 id="gallery-title" style="text-align:center">相册集</h1>
 
-    <div id="thumbnail-list" class="thumbnail-list" style="display:none;"></div>
+  <div class="container">
+    <!-- 左侧缩略图区域 -->
+    <div class="main-content">
+      <div id="album-list" class="album-list"></div>
+      <div id="back-button" style="display: none; margin-left: 20px; margin-bottom: 10px;">
+        <button class="btn" onclick="goBack()">← 返回</button>
+      </div>
+      <div id="thumbnail-list" class="thumbnail-list" style="display:none;"></div>
+    </div>
 
-    <!-- Modal 容器 -->
-    <div id="img-modal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        
-        <!-- 图片 Modal -->
-        <img class="modal-content" id="modal-img" style="display:none">
-        
-        <!-- 视频 Modal -->
-        <video class="modal-content" id="modal-video" controls style="display:none"></video>
-        
-        <div id="modal-caption"></div>
+    <!-- 右侧标签 + 预览 -->
+    <aside class="sidebar">
+    <h3>分类标签</h3>
+    <div id="tag-list"></div>
+
+    <h3>外链</h3>
+    <button class="btn" onclick="location.href='external.html'">外链视频</button>
+
+
+    </aside>
+
+  </div>
+  
+    <!-- Modal 容器（点击放大图片或视频） -->
+    <div id="img-modal" class="modal" onclick="closeModal(event)">
+    <span class="close">&times;</span>
+
+    <!-- 左右箭头 -->
+    <span class="nav-arrow left" onclick="prevMedia(event)">&#10094;</span>
+    <span class="nav-arrow right" onclick="nextMedia(event)">&#10095;</span>
+
+    <!-- 放大图片 -->
+    <img class="modal-content" id="modal-img" style="display: none;" />
+
+    <!-- 放大视频 -->
+    <video class="modal-content" id="modal-video" controls style="display: none;"></video>
+
+    <div id="modal-caption"></div>
     </div>
 
 
-    <script src="loadHeader.js"></script>
-    <script src="gallery.js"></script>
+
+  <script src="./assets/js/gallery.js"></script>
 </body>
 </html>

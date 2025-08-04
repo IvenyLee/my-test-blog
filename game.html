@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>小游戏合集 - Limorgen's Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 公共页眉 -->
+  <div id="header-container"></div>
+  <script src="./assets/js/loadHeader.js"></script>
+
+  <h1 style="text-align: center">小游戏合集</h1>
+
+  <div class="container">
+    <!-- 左侧：游戏列表和加载区域 -->
+    <div class="main-content">
+      <div id="game-list" style="margin-bottom: 20px;"></div>
+      <div id="game-frame-container"></div>
+    </div>
+
+    <!-- 右侧边栏 -->
+    <aside class="sidebar">
+      <h3>页面导航</h3>
+      <button class="btn" onclick="location.href='index.html'">返回首页</button>
+    </aside>
+  </div>
+
+  <script src="./assets/js/gameLoader.js"></script>
+
+    <!-- 游戏全屏 Modal -->
+    <div id="game-modal" class="modal" onclick="closeGameModal(event)">
+    <span class="close" onclick="closeGameModal()">&times;</span>
+    <h2 id="game-modal-title"></h2>
+    <div class="modal-content" style="text-align:center;">
+        <div id="game-container">
+        <iframe id="game-iframe" allowfullscreen></iframe>
+        </div>
+    </div>
+    </div>
+
+
+
+</body>
+</html>
