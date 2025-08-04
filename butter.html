@@ -9,10 +9,10 @@
   <div id="header-container"></div>
   <script src="./assets/js/loadHeader.js"></script>
 
-  <!-- 标题 + 返回外链首页按钮 -->
+  <!-- 标题 + 返回butter首页按钮 -->
     <h1 style="text-align: center;">
     <span id="external-title">Butter</span>
-    <button id="back-to-index" onclick="goBack()" style="display: none; margin-left: 10px;">← 返回</button>
+    <button class="btn" id="back-to-index" onclick="goBack()" style="display: none; margin-left: 10px;">← 返回</button>
     </h1>
 
     <div class="container">
@@ -37,13 +37,19 @@
 
     <!-- 右侧播放列表 -->
     <aside class="sidebar">
+      <!-- 播放列表区域 -->
+      <div class="sidebar-scroll">
         <h3>播放列表</h3>
         <ul id="video-list"></ul>
-        
+      </div>
+
+      <!-- 固定标签区域 -->
+      <div class="sidebar-fixed">
         <h3>标签筛选</h3>
         <div id="tag-list"></div>
+      </div>
     </aside>
-    </div>
+
 
 
   <script src="./assets/js/butterLoader.js"></script>

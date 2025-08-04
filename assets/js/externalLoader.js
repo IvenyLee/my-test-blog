@@ -26,6 +26,7 @@ fetch("./embedVideos/index.json")
         }
 
         // 切换显示
+        player.src = ""; // 清空旧的
         player.src = video.url;
         player.style.display = "block";
         defaultVideo.style.display = "none";

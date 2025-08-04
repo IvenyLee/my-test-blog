@@ -45,6 +45,7 @@ function renderVideoList(videos) {
     const a = document.createElement("a");
     a.href = "#";
     a.textContent = video.title;
+    a.title = video.title; // 鼠标悬停显示完整标题
 
     // 附加 source 标签（可选）
     if (video.source) {
@@ -61,7 +62,8 @@ function renderVideoList(videos) {
         window.open(video.url, "_blank");
         return;
       }
-
+      
+      player.src = ""; // 清空旧的
       player.src = video.url;
       player.style.display = "block";
       defaultVideo.style.display = "none";

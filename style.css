@@ -64,9 +64,25 @@ nav a.active {
   flex: 1;
   background-color: #f5f5f5;
   padding: 15px;
-  border-left: 1px solid #ccc;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 80vh; /* 控制整体高度 */
 }
+
+.sidebar-scroll {
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.sidebar-fixed {
+  position: sticky;
+  bottom: 0;
+  background-color: #f5f5f5; /* 与父级背景一致，避免滚动重叠时出现断层 */
+  padding-top: 10px;
+}
+
+
 
 .sidebar ul {
   padding-left: 20px;
@@ -92,6 +108,25 @@ nav a.active {
 .btn:hover {
   background-color: #666;
 }
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.btn-lg {
+  padding: 12px 20px;
+  font-size: 18px;
+}
+
+.btn-primary {
+  background-color: #3366cc;
+}
+
+.btn-danger {
+  background-color: #cc3333;
+}
+
 
 /* === 标签与引用块 === */
 blockquote {
